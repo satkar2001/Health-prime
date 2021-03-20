@@ -31,8 +31,67 @@
     </div>
 
     <div class="card" id="water-rem">
+        <input id="alarmTime" type="datetime-local">
+        <button id="alarmButton" onclick="setAlarm(this);">Set Remainder </button>
 
-        <div class="top">
+        <div id="alarmOptions" style="display: none;">
+            <h2>time to drink water</h2>
+            <button onclick="stopAlarm();">ok</button>
+        </div>
+
+        <script type="text/javascript">
+
+            var alarmSound = new Audio();
+            alarmSound.src = './alarm.mp3';
+            var alarmTimer;
+
+            function setAlarm(button) {
+                var ms = document.getElementById('alarmTime').valueAsNumber;
+                if(isNaN(ms)) {
+                    alert('Invalid Date');
+                    return;
+                }
+
+                var alarm = new Date(ms);
+                var alarmTime = new Date(alarm.getUTCFullYear(), alarm.getUTCMonth(), alarm.getUTCDate(),  alarm.getUTCHours(), alarm.getUTCMinutes(), alarm.getUTCSeconds());
+
+                var differenceInMs = alarmTime.getTime() - (new Date()).getTime();
+
+                if(differenceInMs < 0) {
+                    alert('Specified time is already passed');
+                    return;
+                }
+
+                alarmTimer = setTimeout(initAlarm, differenceInMs);
+                button.innerText = 'Cancel reminder';
+                button.setAttribute('onclick', 'cancelAlarm(this);');
+            };
+
+            function cancelAlarm(button) {
+                clearTimeout(alarmTimer);
+                button.innerText = 'Set remainder';
+                button.setAttribute('onclick', 'setAlarm(this);')
+            };
+
+            function initAlarm() {
+                alarmSound.play();
+                document.getElementById('alarmOptions').style.display = '';
+            };
+
+            function stopAlarm() {
+                alarmSound.pause();
+                alarmSound.currentTime = 0;
+                document.getElementById('alarmOptions').style.display = 'none';
+                cancelAlarm(document.getElementById('alarmButton'));
+            };
+
+            function snooze() {
+                stopAlarm();
+                alarmTimer = setTimeout(initAlarm, 300000); // 5 * 60 * 1000 = 5 Minutes
+            };
+
+        </script>
+      <!--  <div class="top">
 
             <h2>Water Reminder</h2>
 
@@ -48,11 +107,12 @@
             <input type="text" name="itrvl">
 
             <h3>Duration </h3>
-            <label for="frm">From </label>
-            <input type="text" name="frm">
+           <label for="frm">From </label>
+           <input type="text" name="frm">
             <label for="to">To </label>
             <input type="text" name="to">
         </form>
+    -->
     </div>
 
     <div class="cam">

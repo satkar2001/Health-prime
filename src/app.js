@@ -1,11 +1,11 @@
 const path=require('path');
-var fs = require('fs');
-var FormData = require('form-data');
+//var fs = require('fs');
+//var FormData = require('form-data');
 const express = require('express');
 const upload=require('express-fileupload')
 const app = express();
 const request = require('request');
-const fetch=require('node-fetch');
+//const fetch=require('node-fetch');
 
 const api_key='34792bf45b94aca78a6f4a03a1b704facf862510';
 // var form = new FormData();
@@ -45,9 +45,9 @@ app.post('/',(req,res)=>{
   }
 }
 );
-var resp=request.post({ url: url,form:form, headers: headers },function (err, res, body) {
-  console.log(resp.json()["recognition_results"]);
-});
+// var resp=request.post({ url: url,form:form, headers: headers },function (err, res, body) {
+//   console.log(resp.json()["recognition_results"]);
+// });
 
 
 
