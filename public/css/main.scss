@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+$base-color: #48C791;
+$accent-color: #75FFC3;
+//$dark-bg-color: #3E3E3E;
+$dark-bg-color: #071034;
+$dark-head-color: #0D1642;
+//$dark-card-color: #343434;
+$dark-card-color: #19225C;
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Poppins;
+    background-color: $dark-bg-color;
+}
+
+
+.head {
+    background-color: $dark-head-color;
+
+    h1 {
+        font-weight: 500;
+        color: $base-color;
+        text-align: center;
+        font-size: 1.5em;
+        font-family: Pacifico;
+    }
+}
+
+.nav{
+    width: 100%;
+    overflow: none;
+    position: fixed;
+    bottom: 0;
+    padding: .5em 0 0 0;
+    background-color: $dark-head-color;
+    
+    ul {
+        padding: .5rem;
+        list-style-type: none;
+        display: inline-flex;
+        justify-content: space-around;
+        width: 100vw;
+        margin: 0;
+        overflow: none;
+
+        li {
+            text-decoration: none;
+            position: relative;
+
+            img {
+                height: 2em;
+                bottom: 0;
+            }
+
+            &.active {
+                &::after {
+                    content: '';
+                    background-color: $base-color;
+                    width: 5px;
+                    height: 5px;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 0;
+                    left: 40%;
+                    right: 50%;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    background-color: $dark-card-color;
+    margin: 0 2em 2em 2em;
+    padding: 1.2em;
+    color: white;
+    border-radius: 15px;
+
+    h2 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: .9rem;
+    }
+
+    label {
+        font-size: .8rem;
+    }
+
+    p {
+        font-size: .6rem;;
+    }
+
+    input {
+        width: 25%;
+    }
+
+}
+
+div#water-rem {
+    margin-bottom: 6em;
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 3.5em;
+        height: 2em;
+      }
+      
+      /* Hide default HTML checkbox */
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      /* The slider */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.6em;
+        width: 1.5em;
+        left: 4px;
+        bottom: 2.5px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: $accent-color;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px $accent-color;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(1.4em);
+        -ms-transform: translateX(1.4em);
+        transform: translateX(1.4em);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+}
+
+.cam{
+  position: fixed;
+  background-color: $accent-color;
+  bottom: 5em;
+  right: 1em;
+  border-radius: 100px;
+  width: 4em;
+  height: 4em;
+
+  img {
+    position: relative;
+    text-align: center;
+    color: white;
+    left: 40%;
+    top: 30%;
+    size: 2em;
+  }
+}

@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins;
+  background-color: #071034;
+}
+
+.head {
+  background-color: #0D1642;
+}
+
+.head h1 {
+  font-weight: 500;
+  color: #48C791;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: Pacifico;
+}
+
+.nav {
+  width: 100%;
+  overflow: none;
+  position: fixed;
+  bottom: 0;
+  padding: .5em 0 0 0;
+  background-color: #0D1642;
+}
+
+.nav ul {
+  padding: .5rem;
+  list-style-type: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100vw;
+  margin: 0;
+  overflow: none;
+}
+
+.nav ul li {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav ul li img {
+  height: 2em;
+  bottom: 0;
+}
+
+.nav ul li.active::after {
+  content: '';
+  background-color: #48C791;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 40%;
+  right: 50%;
+  border-radius: 10px;
+}
+
+.card {
+  background-color: #19225C;
+  margin: 0 2em 2em 2em;
+  padding: 1.2em;
+  color: white;
+  border-radius: 15px;
+}
+
+.card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-size: .9rem;
+}
+
+.card label {
+  font-size: .8rem;
+}
+
+.card p {
+  font-size: .6rem;
+}
+
+.card input {
+  width: 25%;
+}
+
+div#water-rem {
+  margin-bottom: 6em;
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
+}
+
+div#water-rem .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div#water-rem .switch {
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+div#water-rem .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+div#water-rem .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+div#water-rem .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.6em;
+  width: 1.5em;
+  left: 4px;
+  bottom: 2.5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+div#water-rem input:checked + .slider {
+  background-color: #75FFC3;
+}
+
+div#water-rem input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #75FFC3;
+          box-shadow: 0 0 1px #75FFC3;
+}
+
+div#water-rem input:checked + .slider:before {
+  -webkit-transform: translateX(1.4em);
+  transform: translateX(1.4em);
+}
+
+div#water-rem .slider.round {
+  border-radius: 34px;
+}
+
+div#water-rem .slider.round:before {
+  border-radius: 50%;
+}
+
+.cam {
+  position: fixed;
+  background-color: #75FFC3;
+  bottom: 5em;
+  right: 1em;
+  border-radius: 100px;
+  width: 4em;
+  height: 4em;
+}
+
+.cam img {
+  position: relative;
+  text-align: center;
+  color: white;
+  left: 40%;
+  top: 30%;
+  size: 2em;
+}
+/*# sourceMappingURL=main.css.map */
