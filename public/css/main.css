@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-body {
+html, body {
   padding: 0;
   margin: 0;
   font-family: Poppins;
@@ -17,6 +17,7 @@ body {
   text-align: center;
   font-size: 1.5em;
   font-family: Pacifico;
+  margin-top: 0;
 }
 
 .nav {

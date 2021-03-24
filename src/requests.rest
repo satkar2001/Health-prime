@@ -1,0 +1,10 @@
+POST https://api.logmeal.es/v2/recognition/dish
+content-type: application/json
+
+{
+    "url": "https://api.logmeal.es/v2/recognition/dish",
+    "files": {
+        "image": "ih",
+    },
+    "headers": { "Authorization": "Bearer " + "34792bf45b94aca78a6f4a03a1b704facf862510"}
+}
