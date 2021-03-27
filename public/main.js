@@ -1,3 +1,10 @@
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js')
+        .then(() => {
+            console.log("SW Registerd")
+        })
+}
+
 (()=>{var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
