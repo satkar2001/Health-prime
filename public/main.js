@@ -1,4 +1,5 @@
 (()=>{var ctx = document.getElementById('myChart').getContext('2d');
+const a='dk';
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
