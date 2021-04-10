@@ -1,11 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
+const fs = require('fs')
+const path = require('path')
+
 router.post('/',(req,res)=>{
 
     if(req.files){
       var  img =req.files.image
       var imgname=img.name
+      
       
       img.mv('./uploads/'+imgname,function(err){
         if(err){
@@ -27,7 +31,13 @@ router.post('/',(req,res)=>{
       if (err) throw err;
       //console.log('result: ', result.toString());
       var data = result
-      res.send(result)
+      console.log(data)
+      //res.send(result)
+      //p = '../data/nutrient.json'
+      p = path.join(__dirname, '..', 'data', 'nutrient.json')
+      fs.writeFile(p, JSON.stringify(data), (err) => {if(err) console.log(err)})
+      //res.redirect('/')
+      res.send(data)
     })
   
 });
