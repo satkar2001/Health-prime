@@ -1,11 +1,18 @@
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js')
+        .then(() => {
+            console.log("SW Registerd")
+        })
+}
+
 (()=>{var ctx = document.getElementById('myChart').getContext('2d');
 const a='dk';
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Calories', 'Fat', 'Sodium', 'Iron'],
         datasets: [{
-            label: '# of Votes',
+            label: 'Nutrients',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

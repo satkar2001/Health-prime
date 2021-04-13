@@ -5,27 +5,37 @@ const express = require('express');
 const upload=require('express-fileupload')
 const app = express();
 const request = require('request');
-//const fetch=require('node-fetch');
-const pp='jlik';
+
+const fetch=require('node-fetch');
+
+const multer = require('multer');
+const { publicDecrypt } = require('crypto');
+
 const api_key='34792bf45b94aca78a6f4a03a1b704facf862510';
-// var form = new FormData();
-// form.append('file', fs.createReadStream(__dirname + './uploads/pic.jpg'))
-// var url='https://api.logmeal.es/v2/recognition/dish';
-// var img='./uploads/00RICEGUIDE8-articleLarge.jpg';
-// var headers = { 'Authorization': 'Bearer ' + api_key};
+
+const uploadRouter = require('../routes/upload');
+
 
 app.use(upload())
 const staticPath=path.join(__dirname,'../public');
 
 app.use(express.static(staticPath));
+
+app.use(multer({dest: './uploads/'}).single('image'))
+
 // listen for requests
 app.listen(3000);
+
+// Routes
+
+app.use('/upload', uploadRouter)
 
 app.get('/', (req, res) => {
 
   res.sendFile('./public/index.html', { root: __dirname });
 
 });
+
 app.post('/',(req,res)=>{
   if(req.files){
     console.log(req.files);
